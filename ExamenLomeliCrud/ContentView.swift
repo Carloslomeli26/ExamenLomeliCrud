@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct ContentView: View {
+    @Enviroment (\.managedObjectContext) var context
+    @FetchRequest (sortDescriptors: <#T##[NSSortDescriptor]#>, KeyPath: \Item.nombre, animation: <#T##Animation?#>)
     var body: some View {
         Text("Hello, world!")
             .padding()
