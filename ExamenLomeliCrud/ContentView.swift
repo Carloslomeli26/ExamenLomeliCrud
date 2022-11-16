@@ -12,7 +12,7 @@ struct ContentView: View {
     @Enviroment (\.managedObjectContext) var context
     @FetchRequest(entity: Empleados.entity(), sortDescriptors:  []) var empleados: FetchedResults<Empleados>
     @State private var nuevoempleadonom = ""
-    
+
     
     var body: some View {
         VStack      {
@@ -21,14 +21,14 @@ struct ContentView: View {
             List{
                 ForEach(empleados, id:\.self){ empleado in
                     Text("\(empleado.name!)")
-                    
+
                 }
                 .onDelete{ indexSet in
                     for index in indexSet{
                         self.context.delete(self.empleados[index])
                         try? self.context.guardar()
                     }
-                    
+                    //hola
                 }
                 
             }
