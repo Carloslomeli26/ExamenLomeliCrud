@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54D8B0A2925495C00292009 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54D8B092925495C00292009 /* Persistence.swift */; };
+		B54D8B0C29254A4300292009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54D8B0B29254A4300292009 /* ContentView.swift */; };
+		B54D8B0E29254A4800292009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54D8B0D29254A4800292009 /* Assets.xcassets */; };
+		B54D8B1129254A4D00292009 /* lomeliexamen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54D8B0F29254A4D00292009 /* lomeliexamen.xcdatamodeld */; };
+		B54D8B1429254A5B00292009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54D8B1329254A5B00292009 /* Preview Assets.xcassets */; };
 		B556AF0629229E9500B11101 /* ExamenLomeliCrudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556AF0529229E9500B11101 /* ExamenLomeliCrudApp.swift */; };
-		B556AF0829229E9500B11101 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556AF0729229E9500B11101 /* ContentView.swift */; };
-		B556AF0A29229E9600B11101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556AF0929229E9600B11101 /* Assets.xcassets */; };
-		B556AF0D29229E9600B11101 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556AF0C29229E9600B11101 /* Preview Assets.xcassets */; };
-		B556AF152922A56C00B11101 /* Crud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B556AF132922A56C00B11101 /* Crud.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B54D8B092925495C00292009 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistence.swift; path = ../../lomeliexamen/lomeliexamen/Persistence.swift; sourceTree = "<group>"; };
+		B54D8B0B29254A4300292009 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../lomeliexamen/lomeliexamen/ContentView.swift; sourceTree = "<group>"; };
+		B54D8B0D29254A4800292009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../lomeliexamen/lomeliexamen/Assets.xcassets; sourceTree = "<group>"; };
+		B54D8B1029254A4D00292009 /* lomeliexamen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lomeliexamen.xcdatamodel; sourceTree = "<group>"; };
+		B54D8B1329254A5B00292009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B556AF0229229E9500B11101 /* ExamenLomeliCrud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamenLomeliCrud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B556AF0529229E9500B11101 /* ExamenLomeliCrudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenLomeliCrudApp.swift; sourceTree = "<group>"; };
-		B556AF0729229E9500B11101 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B556AF0929229E9600B11101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B556AF0C29229E9600B11101 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B556AF142922A56C00B11101 /* Crud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crud.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B54D8B1229254A5B00292009 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B54D8B1329254A5B00292009 /* Preview Assets.xcassets */,
+			);
+			name = "Preview Content";
+			path = "../../lomeliexamen/lomeliexamen/Preview Content";
+			sourceTree = "<group>";
+		};
 		B556AEF929229E9500B11101 = {
 			isa = PBXGroup;
 			children = (
@@ -54,20 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				B556AF0529229E9500B11101 /* ExamenLomeliCrudApp.swift */,
-				B556AF0729229E9500B11101 /* ContentView.swift */,
-				B556AF0929229E9600B11101 /* Assets.xcassets */,
-				B556AF0B29229E9600B11101 /* Preview Content */,
-				B556AF132922A56C00B11101 /* Crud.xcdatamodeld */,
+				B54D8B0B29254A4300292009 /* ContentView.swift */,
+				B54D8B0D29254A4800292009 /* Assets.xcassets */,
+				B54D8B092925495C00292009 /* Persistence.swift */,
+				B54D8B0F29254A4D00292009 /* lomeliexamen.xcdatamodeld */,
+				B54D8B1229254A5B00292009 /* Preview Content */,
 			);
 			path = ExamenLomeliCrud;
-			sourceTree = "<group>";
-		};
-		B556AF0B29229E9600B11101 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B556AF0C29229E9600B11101 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +132,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B556AF0D29229E9600B11101 /* Preview Assets.xcassets in Resources */,
-				B556AF0A29229E9600B11101 /* Assets.xcassets in Resources */,
+				B54D8B1429254A5B00292009 /* Preview Assets.xcassets in Resources */,
+				B54D8B0E29254A4800292009 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B556AF0829229E9500B11101 /* ContentView.swift in Sources */,
-				B556AF152922A56C00B11101 /* Crud.xcdatamodeld in Sources */,
+				B54D8B0A2925495C00292009 /* Persistence.swift in Sources */,
+				B54D8B1129254A4D00292009 /* lomeliexamen.xcdatamodeld in Sources */,
 				B556AF0629229E9500B11101 /* ExamenLomeliCrudApp.swift in Sources */,
+				B54D8B0C29254A4300292009 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,13 +350,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B556AF132922A56C00B11101 /* Crud.xcdatamodeld */ = {
+		B54D8B0F29254A4D00292009 /* lomeliexamen.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B556AF142922A56C00B11101 /* Crud.xcdatamodel */,
+				B54D8B1029254A4D00292009 /* lomeliexamen.xcdatamodel */,
 			);
-			currentVersion = B556AF142922A56C00B11101 /* Crud.xcdatamodel */;
-			path = Crud.xcdatamodeld;
+			currentVersion = B54D8B1029254A4D00292009 /* lomeliexamen.xcdatamodel */;
+			name = lomeliexamen.xcdatamodeld;
+			path = ../../lomeliexamen/lomeliexamen/lomeliexamen.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

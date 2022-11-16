@@ -7,17 +7,38 @@
 
 import SwiftUI
 import CoreData
+
 struct ContentView: View {
     @Enviroment (\.managedObjectContext) var context
-    @FetchRequest (sortDescriptors: <#T##[NSSortDescriptor]#>, KeyPath: \Item.nombre, animation: <#T##Animation?#>)
+    @FetchRequest(entity: Empleados.entity(), sortDescriptors:  []) var empleados: FetchedResults<Empleados>
+    @State private var nuevoempleadonom = ""
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack      {
+            TextField("ADD NEW", text: self.$nuevoempleadonom).multilineTextAlignment(.center)
+            Button("Save"){self.guardar()}
+            List{
+                ForEach(empleados, id:\.self){ empleado in
+                    Text("\(empleado.name!)")
+                    
+                }
+                .onDelete{ indexSet in
+                    for index in indexSet{
+                        self.context.delete(self.empleados[index])
+                        try? self.context.guardar()
+                    }
+                    
+                }
+                
+            }
+        }
+            
+    }
+    func guardar(){
+        let nuevoempleado = Empleados(context: self.context)
+        nuevoempleado.name = nuevoempleadonom
+        try? self.context.guardar()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
