@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let coreDM: Persistence
+    let coreDM: CoreDataManager
     @State var id = ""
     @State var empNombre = ""
     @State var empApePat = ""
@@ -58,7 +58,7 @@ struct ContentView: View {
                         indexSet in
                         indexSet.forEach({ index in
                         let empleado = empArray[index]
-                            coreDM.borrarEmpleado(empleado: <#T##Empleados#>)
+                            coreDM.borrarEmpleado(empleado: empleado)
                         mostrarEmpleado()
                         })
                     })
