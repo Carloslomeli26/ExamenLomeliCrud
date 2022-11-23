@@ -4,7 +4,7 @@ import SwiftUI
 struct ExamenLomeliCruddApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(coreDM: CoreDataManager())
         
         }
     }
