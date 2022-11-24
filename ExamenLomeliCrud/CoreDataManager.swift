@@ -66,7 +66,7 @@ class CoreDataManager{
             let p = datos.first
             p?.empNombre = empleado.empNombre
             p?.empApePat = empleado.empApePat
-            p?.empApePat = empleado.empApeMat
+            p?.empApeMat = empleado.empApeMat
             p?.domicilio = empleado.domicilio
             p?.telefono = empleado.telefono
             try persistentContainer.viewContext.save()
