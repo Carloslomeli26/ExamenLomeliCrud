@@ -15,42 +15,78 @@ struct ContentView: View {
     @State var empApeMat = ""
     @State var domicilio = ""
     @State var telefono = ""
+    
+    @State var nid = ""
+    @State var nempNombre = ""
+    @State var nempApePat = ""
+    @State var nempApeMat = ""
+    @State var ndomicilio = ""
+    @State var ntelefono = ""
 
     @State var seleccionado: Empleados?
     @State var empArray = [Empleados]()
+    @State var isTapped = false
 
 
     var body: some View {
+        NavigationView{
             VStack{
-
-                    TextField("ID Empleado:", text: self.$id).textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Nombre Empleado:", text: self.$empNombre).textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Apellido Paterno", text: self.$empApePat).textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Apellido Materno", text: self.$empApeMat).textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Domicilio:", text: self.$domicilio).textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Telefono:", text: self.$telefono).textFieldStyle(RoundedBorderTextFieldStyle())
-
+                Text("Gestión de Empleados")
+                    .foregroundColor(.black)
+                    .padding(2)
+                    .font(.system(.title, design: .monospaced))
+                   
+                NavigationLink(destination: VStack{
+                    Text("Agregar Empleados")
+                        .foregroundColor(.black)
+                        .padding(2)
+                        .font(.system(.title, design: .monospaced))
+                    TextField("ID Empleado:", text: self.$nid).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                    TextField("Nombre Empleado:", text: self.$nempNombre).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                    TextField("Apellido Paterno", text: self.$nempApePat).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                    TextField("Apellido Materno", text: self.$nempApeMat).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                    TextField("Domicilio:", text: self.$ndomicilio).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                    TextField("Telefono:", text: self.$ntelefono).textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(2)
+                    .font(.headline)
+                    .background(Color.gray.opacity(0.3))
+                
                 Button("Guardar"){
-                 if(seleccionado != nil){
-                    seleccionado?.id = id
-                    seleccionado?.empNombre = empNombre
-                    seleccionado?.empApePat = empApePat
-                    seleccionado?.empApeMat = empApeMat
-                    seleccionado?.domicilio = domicilio
-                    seleccionado?.telefono = telefono
-                    coreDM.actualizarEmpleado(empleado:seleccionado!)
-                    }else{
-                    coreDM.guardarEmpleado(id: id, empNombre: empNombre, empApePat: empApePat, empApeMat: empApeMat, domicilio: domicilio, telefono: telefono)
-                             }
-                            mostrarEmpleado()
+                    coreDM.guardarEmpleado(id: nid, empNombre: nempNombre, empApePat: nempApePat, empApeMat: nempApeMat, domicilio: ndomicilio, telefono: ntelefono)
                             id = ""
                             empNombre = ""
                             empApePat = ""
                             empApeMat = ""
                             domicilio = ""
                             telefono = ""
-                            seleccionado = nil
+                            mostrarEmpleado()
                             }
+                }){
+                        Text("agregar")
+                    
+                    }
+                .padding(24)
+                .font(.system(.title, design: .monospaced))
+                .frame(height: 30)
+                .foregroundColor(.white)
+                .background(Color.green.opacity(0.7))
+                .cornerRadius(4)
+            
                 List{
                     ForEach(empArray, id: \.self){
                         emp in
@@ -70,6 +106,7 @@ struct ContentView: View {
                         empApeMat =  emp.empApeMat ?? ""
                         domicilio =  emp.domicilio ?? ""
                         telefono =  emp.telefono ?? ""
+                        isTapped.toggle()
                     }
                         
                     }.onDelete(perform: {
@@ -82,9 +119,64 @@ struct ContentView: View {
                     })
                 }.padding()
                     .onAppear(perform: {mostrarEmpleado()})
-            }
-        
+            
+                NavigationLink("",destination:VStack{
+                    Text("Editar Empleados")
+                        .foregroundColor(.black)
+                        .padding(2)
+                        .font(.system(.title, design: .monospaced))
+                        TextField("ID Empleado:", text: self.$id).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                        TextField("Nombre Empleado:", text: self.$empNombre).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                        TextField("Apellido Paterno", text: self.$empApePat).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                        TextField("Apellido Materno", text: self.$empApeMat).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                        TextField("Domicilio:", text: self.$domicilio).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                        TextField("Telefono:", text: self.$telefono).textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(2)
+                        .font(.headline)
+                        .background(Color.gray.opacity(0.3))
+                    Button("Editar"){
+                        seleccionado?.id = id
+                        seleccionado?.empNombre = empNombre
+                        seleccionado?.empApePat =  empApePat
+                        seleccionado?.empApeMat =  empApeMat
+                        seleccionado?.domicilio =  domicilio
+                        seleccionado?.telefono =  telefono
+                        
+                        coreDM.actualizarEmpleado(empleado: seleccionado!)
+                        id = ""
+                        empNombre = ""
+                        empApePat = ""
+                        empApeMat = ""
+                        domicilio = ""
+                        telefono = ""
+                        mostrarEmpleado()
+                                }
+            
+        }, isActive: $isTapped)
+            
+        }
+          
     }
+        
+        .background(Color.green.opacity(0.7))
+        .cornerRadius(4)
+    }
+      
     func mostrarEmpleado(){
             empArray = coreDM.leerTodosLosEmpleados()
         }
